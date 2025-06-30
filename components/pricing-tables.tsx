@@ -1,3 +1,5 @@
+import { AuroraText } from '@/components/ui/aurora-text'
+
 export default function PricingTables() {  
   return (
     <section className="relative bg-gray-900 border-t border-transparent dark:border-gray-800">
@@ -9,7 +11,9 @@ export default function PricingTables() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12">
-            <h2 className="h2 font-red-hat-display mb-4 text-gray-100">Start building for free, then add a plan to go live</h2>
+            <h2 className="h2 font-red-hat-display mb-4 text-gray-100">
+              Start building for <AuroraText colors={["#00D4FF", "#FFD700", "#FF6B6B", "#4ECDC4"]} speed={0.8}>free</AuroraText>, then add a plan to go live
+            </h2>
             <p className="text-xl text-gray-400">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit laborum — semper quis lectus nulla.</p>
           </div>
 

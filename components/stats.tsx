@@ -1,3 +1,5 @@
+import { AuroraText } from '@/components/ui/aurora-text'
+
 export default function Stats() {  
   return (
     <section className="relative">
@@ -9,22 +11,30 @@ export default function Stats() {
           <div className="grid grid-cols-2 gap-4 lg:gap-6 md:grid-cols-4 text-center" data-aos-id-stats>
             {/* 1st item */}
             <div className="bg-white dark:bg-gray-800 py-8 px-1 shadow-2xl" data-aos="fade-down" data-aos-anchor="[data-aos-id-stats]">
-              <div className="font-red-hat-display text-3xl font-black tracking-tighter mb-1">2.4M</div>
+              <div className="font-red-hat-display text-3xl font-black tracking-tighter mb-1">
+                <AuroraText colors={["#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4"]} speed={1.5}>2.4M</AuroraText>
+              </div>
               <div className="text-gray-600 dark:text-gray-400">Days turn around</div>
             </div>
             {/* 2nd item */}
             <div className="bg-white dark:bg-gray-800 py-8 px-1 shadow-2xl" data-aos="fade-down" data-aos-anchor="[data-aos-id-stats]" data-aos-delay="100">
-              <div className="font-red-hat-display text-3xl font-black tracking-tighter mb-1">7M</div>
+              <div className="font-red-hat-display text-3xl font-black tracking-tighter mb-1">
+                <AuroraText colors={["#667eea", "#764ba2", "#f093fb", "#f5576c"]} speed={1.3}>7M</AuroraText>
+              </div>
               <div className="text-gray-600 dark:text-gray-400">Days turn around</div>
             </div>
             {/* 3rd item */}
             <div className="bg-white dark:bg-gray-800 py-8 px-1 shadow-2xl" data-aos="fade-down" data-aos-anchor="[data-aos-id-stats]" data-aos-delay="200">
-              <div className="font-red-hat-display text-3xl font-black tracking-tighter mb-1">7.4%</div>
+              <div className="font-red-hat-display text-3xl font-black tracking-tighter mb-1">
+                <AuroraText colors={["#FF0080", "#00D4FF", "#FFFF00", "#FF8C00"]} speed={1.7}>7.4%</AuroraText>
+              </div>
               <div className="text-gray-600 dark:text-gray-400">Days turn around</div>
             </div>
             {/* 4th item */}
             <div className="bg-white dark:bg-gray-800 py-8 px-1 shadow-2xl" data-aos="fade-down" data-aos-anchor="[data-aos-id-stats]" data-aos-delay="300">
-              <div className="font-red-hat-display text-3xl font-black tracking-tighter mb-1">49K</div>
+              <div className="font-red-hat-display text-3xl font-black tracking-tighter mb-1">
+                <AuroraText colors={["#00FF87", "#60EFFF", "#FFD23F", "#FF6B35"]} speed={1.4}>49K</AuroraText>
+              </div>
               <div className="text-gray-600 dark:text-gray-400">Days turn around</div>
             </div>
           </div>

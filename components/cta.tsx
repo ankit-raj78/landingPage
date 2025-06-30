@@ -1,3 +1,5 @@
+import { AuroraText } from '@/components/ui/aurora-text'
+
 export default function Cta() {
   return (
     <section>
@@ -30,7 +32,9 @@ export default function Cta() {
 
             {/* CTA content */}
             <div className="mb-6 lg:mr-16 lg:mb-0 text-center lg:text-left lg:w-1/2">
-              <h3 className="h3 font-red-hat-display text-gray-100">Free until you're ready to launch</h3>
+              <h3 className="h3 font-red-hat-display text-gray-100">
+                <AuroraText colors={["#00FF87", "#60EFFF", "#FFD23F", "#FF6B35"]} speed={1.5}>Free</AuroraText> until you're ready to launch
+              </h3>
             </div>
 
             {/* CTA form */}
