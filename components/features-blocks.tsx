@@ -1,3 +1,5 @@
+import { AuroraText } from '@/components/ui/aurora-text'
+
 export default function FeaturesBlocks() {
   return (
     <section>
@@ -6,7 +8,9 @@ export default function FeaturesBlocks() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-            <h2 className="h2 font-red-hat-display">Put clarity at the center of your website</h2>
+            <h2 className="h2 font-red-hat-display">
+              Put <AuroraText colors={["#3ABAB4", "#667EEA", "#F093FB", "#F5576C"]} speed={1.2}>clarity</AuroraText> at the center of your website
+            </h2>
           </div>
 
           {/* Items */}

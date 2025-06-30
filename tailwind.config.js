@@ -117,11 +117,17 @@ module.exports = {
       },
       animation: {
         float: 'float 5s ease-in-out infinite',
+        aurora: 'aurora 10s linear infinite',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10%)' },
+        },
+        aurora: {
+          '0%': { backgroundPosition: '0% 0%' },
+          '50%': { backgroundPosition: '100% 100%' },
+          '100%': { backgroundPosition: '0% 0%' },
         },
       },
       zIndex: {
