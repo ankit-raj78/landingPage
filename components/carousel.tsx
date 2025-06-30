@@ -9,15 +9,17 @@ import CarouselImage03 from '@/public/images/carousel-item-03.jpg'
 import CarouselImage04 from '@/public/images/carousel-item-04.jpg'
 import CarouselImage05 from '@/public/images/carousel-item-05.jpg'
 
-// Import Swiper
-import Swiper, { Autoplay, Navigation } from 'swiper'
-import 'swiper/swiper.min.css'
-Swiper.use([Autoplay, Navigation])
+// Import Swiper modules for v11+
+import { Swiper as SwiperClass } from 'swiper'
+import { Autoplay, Navigation } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
 
 export default function Carousel() {
 
   useEffect(() => {
-    const carousel = new Swiper('.carousel', {
+    const carousel = new SwiperClass('.carousel', {
+      modules: [Autoplay, Navigation],
       slidesPerView: 'auto',
       grabCursor: true,
       loop: true,
