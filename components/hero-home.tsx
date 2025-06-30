@@ -1,4 +1,4 @@
-import VideoThumb from '@/public/images/music-studio-setup.jpg'
+import VideoThumb from '@/public/images/mockup-image-01.jpg'
 import ModalVideoIphone from '@/components/modal-video-iphone'
 import { AuroraText } from '@/components/ui/aurora-text'
 

@@ -7,9 +7,9 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import Image from 'next/image'
 
-import CarouselImg01 from '@/public/images/dj-mixer-red.jpg'
-import CarouselImg02 from '@/public/images/daw-interface.jpg'
-import CarouselImg03 from '@/public/images/music-studio-setup.jpg'
+import CarouselImg01 from '@/public/images/carousel-item-01.jpg'
+import CarouselImg02 from '@/public/images/carousel-item-02.jpg'
+import CarouselImg03 from '@/public/images/carousel-item-03.jpg'
 
 export default function Carousel() {
 
