@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Home - Appy',
-  description: 'Page description',
+  title: 'SyncTown - Collaborative Music Production Platform',
+  description: 'Join SyncTown, the social music production platform where creators collaborate in real-time. Create, produce, and share music together with AI-powered tools and seamless DAW integration.',
 }
 
 import PageIllustration from '@/components/page-illustration'

@@ -1,136 +1,122 @@
 'use client'
 
-import { useEffect } from 'react'
-
-import Image from 'next/image'
-import CarouselImage01 from '@/public/images/carousel-item-01.jpg'
-import CarouselImage02 from '@/public/images/carousel-item-02.jpg'
-import CarouselImage03 from '@/public/images/carousel-item-03.jpg'
-import CarouselImage04 from '@/public/images/carousel-item-04.jpg'
-import CarouselImage05 from '@/public/images/carousel-item-05.jpg'
-
-// Import Swiper modules for v11+
-import { Swiper as SwiperClass } from 'swiper'
+import { useState, useRef, useEffect } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
+import Image from 'next/image'
+
+import CarouselImg01 from '@/public/images/dj-mixer-red.jpg'
+import CarouselImg02 from '@/public/images/daw-interface.jpg'
+import CarouselImg03 from '@/public/images/music-studio-setup.jpg'
 
 export default function Carousel() {
 
-  useEffect(() => {
-    const carousel = new SwiperClass('.carousel', {
-      modules: [Autoplay, Navigation],
-      slidesPerView: 'auto',
-      grabCursor: true,
-      loop: true,
-      centeredSlides: true,
-      initialSlide: 1,
-      spaceBetween: 24,
-      autoplay: {
-        delay: 7000,
-      },
-      navigation: {
-        nextEl: '.carousel-next',
-        prevEl: '.carousel-prev',
-      },
-    })
-  }, [])
+  const prevElRef = useRef<HTMLButtonElement>(null)
+  const nextElRef = useRef<HTMLButtonElement>(null)
 
   return (
-    <section className="border-t border-transparent dark:border-gray-800">
-      <div className="py-12 md:py-20">
-
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="py-12 md:py-20 border-t border-gray-200 dark:border-gray-800">
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 font-red-hat-display mb-4">From rough design files, to powerful products</h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
+            <h2 className="h2 font-red-hat-display mb-4">Experience the future of music creation</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400">Discover how SyncTown revolutionizes music production through real-time collaboration, AI-powered matching, and professional-grade tools.</p>
+          </div>
+
+          {/* Carousel built with Swiper.js [https://swiperjs.com/] */}
+          <div className="relative before:absolute before:inset-0 before:border-y before:border-gray-200 dark:before:border-gray-800 before:rotate-3 before:bg-gray-50 dark:before:bg-gray-800/20">
+
+            {/* Arrows */}
+            <div className="flex items-center justify-center">
+              <button ref={prevElRef} className="relative z-20 w-12 h-12 p-1 box-content -mr-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/60 hover:border-gray-300 dark:hover:border-gray-600 shadow-md rounded-full transition duration-150 ease-in-out">
+                <span className="sr-only">Previous</span>
+                <svg className="w-4 h-4 fill-current text-gray-500 -ml-0.5" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.7 14.7l1.4-1.4L3.8 9H16V7H3.8l4.3-4.3-1.4-1.4L0 8z" />
+                </svg>
+              </button>
+              <button ref={nextElRef} className="relative z-20 w-12 h-12 p-1 box-content -ml-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/60 hover:border-gray-300 dark:hover:border-gray-600 shadow-md rounded-full transition duration-150 ease-in-out">
+                <span className="sr-only">Next</span>
+                <svg className="w-4 h-4 fill-current text-gray-500 ml-0.5" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Carousel */}
+            <Swiper
+              modules={[Autoplay, Navigation]}
+              slidesPerView={1}
+              spaceBetween={32}
+              loop={true}
+              autoplay={{
+                delay: 6000,
+                disableOnInteraction: false,
+              }}
+              navigation={{
+                prevEl: prevElRef.current,
+                nextEl: nextElRef.current,
+              }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 2
+                },
+                1024: {
+                  slidesPerView: 3
+                }
+              }}
+              className="!overflow-visible"
+            >
+
+              {/* Carousel items */}
+              <SwiperSlide>
+                <Image className="mx-auto" src={CarouselImg01} width={520} height={334} alt="Professional DJ mixer in red lighting for live music collaboration" />
+                <div className="text-center mt-8">
+                  <h4 className="h4 font-red-hat-display mb-2">Live Performance Mode</h4>
+                  <p className="text-lg text-gray-600 dark:text-gray-400">Turn any collaboration session into a live performance with real-time mixing capabilities and audience interaction features.</p>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <Image className="mx-auto" src={CarouselImg02} width={520} height={334} alt="Digital audio workstation interface showing professional mixing console" />
+                <div className="text-center mt-8">
+                  <h4 className="h4 font-red-hat-display mb-2">Professional DAW Tools</h4>
+                  <p className="text-lg text-gray-600 dark:text-gray-400">Access industry-standard mixing, effects, and recording tools directly in your browser, with zero setup required.</p>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <Image className="mx-auto" src={CarouselImg03} width={520} height={334} alt="Modern music production studio setup with laptop and professional headphones" />
+                <div className="text-center mt-8">
+                  <h4 className="h4 font-red-hat-display mb-2">Remote Collaboration</h4>
+                  <p className="text-lg text-gray-600 dark:text-gray-400">Connect with musicians worldwide and create together as if you're in the same studio, with ultra-low latency audio streaming.</p>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <Image className="mx-auto" src={CarouselImg01} width={520} height={334} alt="DJ mixer and professional audio equipment" />
+                <div className="text-center mt-8">
+                  <h4 className="h4 font-red-hat-display mb-2">AI-Powered Assistance</h4>
+                  <p className="text-lg text-gray-600 dark:text-gray-400">Let our AI suggest harmonies, rhythms, and even find the perfect collaborators based on your musical style and preferences.</p>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <Image className="mx-auto" src={CarouselImg02} width={520} height={334} alt="Professional mixing console interface" />
+                <div className="text-center mt-8">
+                  <h4 className="h4 font-red-hat-display mb-2">Version Control</h4>
+                  <p className="text-lg text-gray-600 dark:text-gray-400">Track every change, branch your projects, and merge ideas seamlessly with our music-focused version control system.</p>
+                </div>
+              </SwiperSlide>
+
+            </Swiper>
+
           </div>
 
         </div>
-
-        {/* Carousel built with Swiper.js [https://swiperjs.com/] */}
-        {/* * Custom styles in src/css/additional-styles/theme.scss */}
-        <div className="carousel swiper-container">
-          <div className="swiper-wrapper">
-            {/* Carousel items */}
-            <div className="swiper-slide max-w-lg">
-              <Image className="transition-opacity duration-300" src={CarouselImage01} width={540} height={460} alt="Carousel item 01" />
-              <div className="absolute inset-0 flex flex-col transition-opacity duration-300 translate-z-0">
-                <div className="flex grow">
-                  <a className="inline-flex btn-sm text-white bg-teal-500 hover:bg-teal-400 mx-auto self-center" href="#0">Learn more</a>
-                </div>
-                <div className="absolute bottom-0 right-0 p-6">
-                  <a className="text-xs font-medium text-center text-white py-2 px-3 rounded-full bg-gray-900/50 hover:bg-gray-900 transition duration-150 ease-in-out" href="#0">Creative Services</a>
-                </div>
-              </div>
-            </div>
-            <div className="swiper-slide max-w-lg">
-              <Image className="transition-opacity duration-300" src={CarouselImage02} width={540} height={460} alt="Carousel item 02" />
-              <div className="absolute inset-0 flex flex-col transition-opacity duration-300 translate-z-0">
-                <div className="flex grow">
-                  <a className="inline-flex btn-sm text-white bg-teal-500 hover:bg-teal-400 mx-auto self-center" href="#0">Learn more</a>
-                </div>
-                <div className="absolute bottom-0 right-0 p-6">
-                  <a className="text-xs font-medium text-center text-white py-2 px-3 rounded-full bg-gray-900/50 hover:bg-gray-900 transition duration-150 ease-in-out" href="#0">Creative Services</a>
-                </div>
-              </div>
-            </div>
-            <div className="swiper-slide max-w-lg">
-              <Image className="transition-opacity duration-300" src={CarouselImage03} width={540} height={460} alt="Carousel item 03" />
-              <div className="absolute inset-0 flex flex-col transition-opacity duration-300 translate-z-0">
-                <div className="flex grow">
-                  <a className="inline-flex btn-sm text-white bg-teal-500 hover:bg-teal-400 mx-auto self-center" href="#0">Learn more</a>
-                </div>
-                <div className="absolute bottom-0 right-0 p-6">
-                  <a className="text-xs font-medium text-center text-white py-2 px-3 rounded-full bg-gray-900/50 hover:bg-gray-900 transition duration-150 ease-in-out" href="#0">Creative Services</a>
-                </div>
-              </div>
-            </div>
-            <div className="swiper-slide max-w-lg">
-              <Image className="transition-opacity duration-300" src={CarouselImage04} width={540} height={460} alt="Carousel item 04" />
-              <div className="absolute inset-0 flex flex-col transition-opacity duration-300 translate-z-0">
-                <div className="flex grow">
-                  <a className="inline-flex btn-sm text-white bg-teal-500 hover:bg-teal-400 mx-auto self-center" href="#0">Learn more</a>
-                </div>
-                <div className="absolute bottom-0 right-0 p-6">
-                  <a className="text-xs font-medium text-center text-white py-2 px-3 rounded-full bg-gray-900/50 hover:bg-gray-900 transition duration-150 ease-in-out" href="#0">Creative Services</a>
-                </div>
-              </div>
-            </div>
-            <div className="swiper-slide max-w-lg">
-              <Image className="transition-opacity duration-300" src={CarouselImage05} width={540} height={460} alt="Carousel item 05" />
-              <div className="absolute inset-0 flex flex-col transition-opacity duration-300 translate-z-0">
-                <div className="flex grow">
-                  <a className="inline-flex btn-sm text-white bg-teal-500 hover:bg-teal-400 mx-auto self-center" href="#0">Learn more</a>
-                </div>
-                <div className="absolute bottom-0 right-0 p-6">
-                  <a className="text-xs font-medium text-center text-white py-2 px-3 rounded-full bg-gray-900/50 hover:bg-gray-900 transition duration-150 ease-in-out" href="#0">Creative Services</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Arrows */}
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between mt-12 md:mt-16">
-            <button className="carousel-prev relative z-20 w-12 h-12 p-1 box-content flex items-center justify-center group bg-teal-500 hover:bg-teal-400 dark:bg-gray-800 dark:hover:bg-teal-500/25 shadow-xl transition duration-150 ease-in-out">
-              <span className="sr-only">Previous</span>
-              <svg className="w-4 h-4 fill-current text-white dark:text-gray-400 group-hover:text-white dark:group-hover:text-teal-500 transition duration-150 ease-in-out" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.7 14.7l1.4-1.4L3.8 9H16V7H3.8l4.3-4.3-1.4-1.4L0 8z" />
-              </svg>
-            </button>
-            <button className="carousel-next relative z-20 w-12 h-12 p-1 box-content flex items-center justify-center group bg-teal-500 hover:bg-teal-400 dark:bg-gray-800 dark:hover:bg-teal-500/25 shadow-xl transition duration-150 ease-in-out">
-              <span className="sr-only">Next</span>
-              <svg className="w-4 h-4 fill-current text-white dark:text-gray-400 group-hover:text-white dark:group-hover:text-teal-500 transition duration-150 ease-in-out" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
       </div>
     </section>
   )

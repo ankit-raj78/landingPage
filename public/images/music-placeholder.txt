@@ -1,0 +1,12 @@
+Please add your music production images to this folder with the following names:
+
+1. music-studio-setup.jpg - The image showing a music production setup with laptop and headphones
+2. dj-mixer-red.jpg - The red-lit DJ mixer image  
+3. daw-interface.jpg - The digital audio workstation interface image
+
+These images will be used in:
+- Hero section: music-studio-setup.jpg
+- Carousel: All three images rotating to show different aspects of music production
+- Features: Background elements showcasing the platform
+
+Make sure the images are optimized for web (JPG format, reasonable file sizes) and have good contrast for text overlay where needed. 

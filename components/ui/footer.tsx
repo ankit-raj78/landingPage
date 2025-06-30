@@ -1,254 +1,144 @@
 import Link from 'next/link'
+import Logo from './logo'
 
 export default function Footer() {
   return (
-    <footer className="relative">
+    <footer>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="py-12 md:py-16 border-t border-gray-200 dark:border-gray-800 -mt-px">
-          {/* Footer illustration */}
-          <div className="pointer-events-none -z-1" aria-hidden="true">
-            <svg
-              className="absolute bottom-0 left-0 transform -translate-x-1/2 ml-24 dark:opacity-40"
-              width="800"
-              height="264"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="400" cy="400" r="400" fill="url(#footerglow_paint0_radial)" fillOpacity=".4" />
-              <defs>
-                <radialGradient
-                  id="footerglow_paint0_radial"
-                  cx="0"
-                  cy="0"
-                  r="1"
-                  gradientUnits="userSpaceOnUse"
-                  gradientTransform="rotate(90 0 400) scale(315.089)"
-                >
-                  <stop stopColor="#3ABAB4" />
-                  <stop offset="1" stopColor="#3ABAB4" stopOpacity=".01" />
-                </radialGradient>
-              </defs>
-            </svg>
-          </div>
 
-          {/* Top area: Blocks */}
-          <div className="grid md:grid-cols-12 gap-8 lg:gap-20 mb-8 md:mb-12">
-            {/* 1st block */}
-            <div className="md:col-span-2 lg:col-span-3">
-              {/* Logo */}
-              <Link className="inline-block" href="/" aria-label="Cruip">
-                <svg className="w-8 h-8" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient x1="26%" y1="100%" x2="100%" y2="100%" id="flogo_a">
-                      <stop stopColor="#3ABAB4" offset="0%" />
-                      <stop stopColor="#7F9CF5" offset="100%" />
-                    </linearGradient>
-                    <linearGradient x1="26%" y1="100%" x2="100%" y2="100%" id="flogo_b">
-                      <stop stopColor="#3ABAB4" offset="0%" />
-                      <stop stopColor="#3ABAB4" stopOpacity="0" offset="100%" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M32 16h-8a8 8 0 10-16 0H0C0 7.163 7.163 0 16 0s16 7.163 16 16z" fill="url(#flogo_a)" />
-                  <path d="M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16h8a8 8 0 1016 0h8z" fill="url(#flogo_b)" />
-                </svg>
-              </Link>
+        {/* Top area: Blocks */}
+        <div className="grid sm:grid-cols-12 gap-8 py-8 md:py-12 border-t border-gray-200 dark:border-gray-800">
+
+          {/* 1st block */}
+          <div className="sm:col-span-12 lg:col-span-4 lg:max-w-xs">
+            <div className="mb-2">
+              <Logo />
             </div>
-
-            {/* 2nd, 3rd, 4th and 5th blocks */}
-            <div className="md:col-span-10 lg:col-span-9 grid grid-cols-2 md:grid-cols-4 gap-8">
-              {/* 2nd block */}
-              <div className="text-sm">
-                <h6 className="font-medium uppercase mb-2">Products</h6>
-                <ul>
-                  <li className="mb-1">
-                    <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                      Drag And Drop
-                    </a>
-                  </li>
-                  <li className="mb-1">
-                    <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                      Visual Studio X
-                    </a>
-                  </li>
-                  <li className="mb-1">
-                    <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                      Easy Content
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* 3rd block */}
-              <div className="text-sm">
-                <h6 className="font-medium uppercase mb-2">Resources</h6>
-                <ul>
-                  <li className="mb-1">
-                    <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                      Industries and tools
-                    </a>
-                  </li>
-                  <li className="mb-1">
-                    <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                      Use cases
-                    </a>
-                  </li>
-                  <li className="mb-1">
-                    <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                      Blog
-                    </a>
-                  </li>
-                  <li className="mb-1">
-                    <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                      Online events
-                    </a>
-                  </li>
-                  <li className="mb-1">
-                    <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                      Nostrud exercitation
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* 4th block */}
-              <div className="text-sm">
-                <h6 className="font-medium uppercase mb-2">Company</h6>
-                <ul>
-                  <li className="mb-1">
-                    <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                      Diversity & inclusion
-                    </a>
-                  </li>
-                  <li className="mb-1">
-                    <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                      About us
-                    </a>
-                  </li>
-                  <li className="mb-1">
-                    <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                      Press
-                    </a>
-                  </li>
-                  <li className="mb-1">
-                    <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                      Customer stories
-                    </a>
-                  </li>
-                  <li className="mb-1">
-                    <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                      Online communities
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* 5th block */}
-              <div className="text-sm">
-                <h6 className="font-medium uppercase mb-2">Support</h6>
-                <ul>
-                  <li className="mb-1">
-                    <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                      Documentation
-                    </a>
-                  </li>
-                  <li className="mb-1">
-                    <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                      Tutorials & guides
-                    </a>
-                  </li>
-                  <li className="mb-1">
-                    <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                      Webinars
-                    </a>
-                  </li>
-                  <li className="mb-1">
-                    <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                      Open-source
-                    </a>
-                  </li>
-                </ul>
-              </div>
+            <div className="text-gray-600 dark:text-gray-400 text-sm">
+              SyncTown is revolutionizing music creation through real-time collaboration. Connect with artists worldwide and create music together, powered by AI and professional-grade tools.
             </div>
           </div>
 
-          {/* Bottom area */}
-          <div className="md:flex md:items-center md:justify-between">
-            {/* Social links */}
-            <ul className="flex mb-4 md:order-2 md:ml-4 md:mb-0">
-              <li>
-                <a
-                  className="flex justify-center items-center text-white bg-teal-500 dark:text-teal-500 dark:bg-gray-800 hover:underline hover:bg-teal-600 rounded-full transition duration-150 ease-in-out"
-                  href="#0"
-                  aria-label="Twitter"
-                >
-                  <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path d="m13.063 9 3.495 4.475L20.601 9h2.454l-5.359 5.931L24 23h-4.938l-3.866-4.893L10.771 23H8.316l5.735-6.342L8 9h5.063Zm-.74 1.347h-1.457l8.875 11.232h1.36l-8.778-11.232Z" />
-                  </svg>
-                </a>
+          {/* 2nd block */}
+          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
+            <h6 className="text-gray-800 dark:text-gray-100 font-medium mb-2">Platform</h6>
+            <ul className="text-sm">
+              <li className="mb-2">
+                <Link href="/features" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition duration-150 ease-in-out">Features</Link>
               </li>
-              <li className="ml-4">
-                <a
-                  className="flex justify-center items-center text-white bg-teal-500 dark:text-teal-500 dark:bg-gray-800 hover:underline hover:bg-teal-600 rounded-full transition duration-150 ease-in-out"
-                  href="#0"
-                  aria-label="Github"
-                >
-                  <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 8.2c-4.4 0-8 3.6-8 8 0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.4.6.9.6 1.6v2.2c0 .2.1.5.6.4 3.2-1.1 5.5-4.1 5.5-7.6-.1-4.4-3.7-8-8.1-8z" />
-                  </svg>
-                </a>
+              <li className="mb-2">
+                <Link href="/pricing" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition duration-150 ease-in-out">Pricing</Link>
               </li>
-              <li className="ml-4">
-                <a
-                  className="flex justify-center items-center text-white bg-teal-500 dark:text-teal-500 dark:bg-gray-800 hover:underline hover:bg-teal-600 rounded-full transition duration-150 ease-in-out"
-                  href="#0"
-                  aria-label="Facebook"
-                >
-                  <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14.023 24L14 17h-3v-3h3v-2c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V14H21l-1 3h-2.72v7h-3.257z" />
-                  </svg>
-                </a>
+              <li className="mb-2">
+                <Link href="/security" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition duration-150 ease-in-out">Security</Link>
               </li>
-              <li className="ml-4">
-                <a
-                  className="flex justify-center items-center text-white bg-teal-500 dark:text-teal-500 dark:bg-gray-800 hover:underline hover:bg-teal-600 rounded-full transition duration-150 ease-in-out"
-                  href="#0"
-                  aria-label="Instagram"
-                >
-                  <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="20.145" cy="11.892" r="1" />
-                    <path d="M16 20c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4zm0-6c-1.103 0-2 .897-2 2s.897 2 2 2 2-.897 2-2-.897-2-2-2z" />
-                    <path d="M20 24h-8c-2.056 0-4-1.944-4-4v-8c0-2.056 1.944-4 4-4h8c2.056 0 4 1.944 4 4v8c0 2.056-1.944 4-4 4zm-8-14c-.935 0-2 1.065-2 2v8c0 .953 1.047 2 2 2h8c.935 0 2-1.065 2-2v-8c0-.935-1.065-2-2-2h-8z" />
-                  </svg>
-                </a>
-              </li>
-              <li className="ml-4">
-                <a
-                  className="flex justify-center items-center text-white bg-teal-500 dark:text-teal-500 dark:bg-gray-800 hover:underline hover:bg-teal-600 rounded-full transition duration-150 ease-in-out"
-                  href="#0"
-                  aria-label="Linkedin"
-                >
-                  <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M23.3 8H8.7c-.4 0-.7.3-.7.7v14.7c0 .3.3.6.7.6h14.7c.4 0 .7-.3.7-.7V8.7c-.1-.4-.4-.7-.8-.7zM12.7 21.6h-2.3V14h2.4v7.6h-.1zM11.6 13c-.8 0-1.4-.7-1.4-1.4 0-.8.6-1.4 1.4-1.4.8 0 1.4.6 1.4 1.4-.1.7-.7 1.4-1.4 1.4zm10 8.6h-2.4v-3.7c0-.9 0-2-1.2-2s-1.4 1-1.4 2v3.8h-2.4V14h2.3v1c.3-.6 1.1-1.2 2.2-1.2 2.4 0 2.8 1.6 2.8 3.6v4.2h.1z" />
-                  </svg>
-                </a>
+              <li className="mb-2">
+                <Link href="/api" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition duration-150 ease-in-out">API</Link>
               </li>
             </ul>
-
-            {/* Middle links */}
-            <div className="text-sm md:order-1 text-gray-700 mb-2 md:mb-0">
-              <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                Terms
-              </a>{' '}
-              ·{' '}
-              <a className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="#0">
-                Privacy Policy
-              </a>
-            </div>
-
-            {/* Copyrights note */}
-            <div className="text-gray-600 dark:text-gray-400 text-sm mr-4">&copy; Cruip.com. All rights reserved.</div>
           </div>
+
+          {/* 3rd block */}
+          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
+            <h6 className="text-gray-800 dark:text-gray-100 font-medium mb-2">Resources</h6>
+            <ul className="text-sm">
+              <li className="mb-2">
+                <Link href="/help" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition duration-150 ease-in-out">Help Center</Link>
+              </li>
+              <li className="mb-2">
+                <Link href="/tutorials" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition duration-150 ease-in-out">Tutorials</Link>
+              </li>
+              <li className="mb-2">
+                <Link href="/blog" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition duration-150 ease-in-out">Blog</Link>
+              </li>
+              <li className="mb-2">
+                <Link href="/community" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition duration-150 ease-in-out">Community</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* 4th block */}
+          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
+            <h6 className="text-gray-800 dark:text-gray-100 font-medium mb-2">Company</h6>
+            <ul className="text-sm">
+              <li className="mb-2">
+                <Link href="/about" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition duration-150 ease-in-out">About Us</Link>
+              </li>
+              <li className="mb-2">
+                <Link href="/careers" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition duration-150 ease-in-out">Careers</Link>
+              </li>
+              <li className="mb-2">
+                <Link href="/press" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition duration-150 ease-in-out">Press Kit</Link>
+              </li>
+              <li className="mb-2">
+                <Link href="/contact" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition duration-150 ease-in-out">Contact</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* 5th block */}
+          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
+            <h6 className="text-gray-800 dark:text-gray-100 font-medium mb-2">Legal</h6>
+            <ul className="text-sm">
+              <li className="mb-2">
+                <Link href="/privacy" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition duration-150 ease-in-out">Privacy Policy</Link>
+              </li>
+              <li className="mb-2">
+                <Link href="/terms" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition duration-150 ease-in-out">Terms of Service</Link>
+              </li>
+              <li className="mb-2">
+                <Link href="/dmca" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition duration-150 ease-in-out">DMCA</Link>
+              </li>
+              <li className="mb-2">
+                <Link href="/copyright" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition duration-150 ease-in-out">Copyright</Link>
+              </li>
+            </ul>
+          </div>
+
         </div>
+
+        {/* Bottom area */}
+        <div className="md:flex md:items-center md:justify-between py-4 md:py-8 border-t border-gray-200 dark:border-gray-800">
+
+          {/* Social as */}
+          <ul className="flex mb-4 md:order-1 md:ml-4 md:mb-0">
+            <li>
+              <Link href="#" className="flex justify-center items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 bg-white dark:bg-gray-800 hover:bg-white dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 rounded-full shadow transition duration-150 ease-in-out" aria-label="Twitter">
+                <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                  <path d="m13.063 9 3.495 4.475L20.601 9h2.454l-5.359 5.931L24 23h-4.938l-3.866-4.893L10.771 23H8.316l5.735-6.342L8 9h5.063Zm-.74 1.347h-1.457l8.875 11.232h1.36l-8.778-11.232Z" />
+                </svg>
+              </Link>
+            </li>
+            <li className="ml-4">
+              <Link href="#" className="flex justify-center items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 bg-white dark:bg-gray-800 hover:bg-white dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 rounded-full shadow transition duration-150 ease-in-out" aria-label="Instagram">
+                <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="20.145" cy="11.892" r="1" />
+                  <path d="M16 20c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4zm0-6c-1.103 0-2 .897-2 2s.897 2 2 2 2-.897 2-2-.897-2-2-2z" />
+                  <path d="M20 24h-8c-2.056 0-4-1.944-4-4v-8c0-2.056 1.944-4 4-4h8c2.056 0 4 1.944 4 4v8c0 2.056-1.944 4-4 4zm-8-14c-.935 0-2 1.065-2 2v8c0 .953 1.047 2 2 2h8c.935 0 2-1.065 2-2v-8c0-.935-1.065-2-2-2h-8z" />
+                </svg>
+              </Link>
+            </li>
+            <li className="ml-4">
+              <Link href="#" className="flex justify-center items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 bg-white dark:bg-gray-800 hover:bg-white dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 rounded-full shadow transition duration-150 ease-in-out" aria-label="YouTube">
+                <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M23.498 8.001c.888.092 1.611.814 1.702 1.702.157 1.535.3 4.297.3 6.297s-.143 4.762-.3 6.297c-.091.888-.814 1.611-1.702 1.702-1.535.157-4.297.3-7.498.3s-5.963-.143-7.498-.3c-.888-.091-1.611-.814-1.702-1.702-.157-1.535-.3-4.297-.3-6.297s.143-4.762.3-6.297c.091-.888.814-1.611 1.702-1.702C10.037 7.844 12.799 7.701 16 7.701s5.963.143 7.498.3zm-5.612 7.999l-3.558-2.05v4.1l3.558-2.05z" />
+                </svg>
+              </Link>
+            </li>
+            <li className="ml-4">
+              <Link href="#" className="flex justify-center items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 bg-white dark:bg-gray-800 hover:bg-white dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 rounded-full shadow transition duration-150 ease-in-out" aria-label="Discord">
+                <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24.44 7.325c-1.848-.85-3.822-1.487-5.888-1.844-.255.456-.537 1.047-.735 1.519-2.207-.331-4.406-.331-6.584 0-.199-.472-.489-1.063-.744-1.519-2.069.357-4.043.997-5.891 1.847C1.612 12.513.397 17.566.794 22.547c2.481 1.828 4.888 2.934 7.253 3.669.584-.791 1.1-1.625 1.541-2.5-.844-.319-1.647-.706-2.413-1.156.206-.15.406-.306.6-.466 4.659 2.162 9.719 2.162 14.325 0 .194.163.394.316.6.466-.769.453-1.572.837-2.416 1.156.441.875.957 1.709 1.541 2.5 2.366-.735 4.772-1.841 7.253-3.669.459-5.769-1.056-10.781-4.134-15.222zM12.175 19.619c-1.381 0-2.522-1.272-2.522-2.822s1.103-2.822 2.522-2.822c1.419 0 2.553 1.272 2.522 2.822 0 1.55-1.103 2.822-2.522 2.822zm7.65 0c-1.381 0-2.522-1.272-2.522-2.822s1.103-2.822 2.522-2.822c1.419 0 2.553 1.272 2.522 2.822 0 1.55-1.103 2.822-2.522 2.822z" />
+                </svg>
+              </Link>
+            </li>
+          </ul>
+
+          {/* Copyrights note */}
+          <div className="text-sm text-gray-600 dark:text-gray-400 mr-4">© SyncTown, Inc. All rights reserved.</div>
+
+        </div>
+
       </div>
     </footer>
   )
