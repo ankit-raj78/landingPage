@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'About - Appy',
-  description: 'Page description',
+  title: 'About - SyncTown',
+  description: 'Learn about SyncTown\'s mission to revolutionize music creation through browser-based collaboration.',
 }
 
 import Hero from '@/components/hero-about'

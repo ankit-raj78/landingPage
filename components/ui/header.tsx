@@ -90,7 +90,7 @@ export default function Header() {
                 <ThemeToggle />
               </li>
               <li className="ml-6">
-                <Link className="btn-sm text-white bg-teal-500 hover:bg-teal-400 ml-3" href="/waitlist">
+                <Link className="btn-sm text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 ml-3" href="/waitlist">
                   Join Waitlist
                 </Link>
               </li>

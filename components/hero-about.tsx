@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import HeroBg from '@/public/images/hero-bg-03.jpg'
 import HeroImage from '@/public/images/about-hero.jpg'
+import { AuroraText } from '@/components/ui/aurora-text'
 
 export default function HeroAbout() {
   return (
@@ -21,9 +22,16 @@ export default function HeroAbout() {
                 <div className="absolute inset-0 bg-linear-to-t from-white dark:from-gray-900" aria-hidden="true"></div>
               </div>
               <div className="absolute" data-aos="fade-down">
-                <h1 className="h1 lg:text-6xl font-red-hat-display">Make your own <span className="text-teal-500">way</span></h1>
+                <h1 className="h1 lg:text-6xl font-red-hat-display">
+                  Music creation, <AuroraText colors={["#FF0080", "#00D4FF", "#FFFF00", "#FF8C00"]} speed={1.2}>reimagined</AuroraText>
+                </h1>
               </div>
               <div className="absolute bottom-0 -mb-8 w-0.5 h-16 bg-gray-300 dark:bg-gray-700" aria-hidden="true"></div>
+            </div>
+            <div className="max-w-3xl mx-auto mt-16" data-aos="fade-up" data-aos-delay="300">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
+                We're building the future of collaborative music creation. SyncTown brings together the instant accessibility of the web with the power of professional music production tools, creating a platform where creativity knows no boundaries.
+              </p>
             </div>
           </div>
         </div>
