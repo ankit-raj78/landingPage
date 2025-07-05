@@ -12,7 +12,7 @@ export default function FeaturesBlocks() {
               The <AuroraText colors={["#FF0080", "#00D4FF", "#FFFF00", "#FF8C00"]} speed={1.2}>Social Studio</AuroraText> That Lives in Your Browser
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
-              Finally, a music creation platform that gets it right. JamSphere combines the instant social energy of live jamming with the precision editing power of a professional DAW—without the complexity that kills creativity.
+              Finally, a music creation platform that gets it right. SyncTown combines the instant social energy of live jamming with the precision editing power of a professional DAW—without the complexity that kills creativity.
             </p>
           </div>
 

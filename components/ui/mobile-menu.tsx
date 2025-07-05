@@ -74,7 +74,7 @@ export default function MobileMenu() {
             </Link>
             {/* Links */}
             <ul>
-              <li>
+              {/* <li>
                 <Link
                   href="/about"
                   className="flex text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 py-2"
@@ -82,8 +82,17 @@ export default function MobileMenu() {
                 >
                   About
                 </Link>
-              </li>
+              </li> */}
               <li>
+                <Link
+                  href="/features"
+                  className="flex text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 py-2"
+                  onClick={() => setMobileNavOpen(false)}
+                >
+                  Features
+                </Link>
+              </li>
+              {/* <li>
                 <Link
                   href="/blog"
                   className="flex text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 py-2"
@@ -91,8 +100,8 @@ export default function MobileMenu() {
                 >
                   Blog
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link
                   href="/testimonials"
                   className="flex text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 py-2"
@@ -100,8 +109,8 @@ export default function MobileMenu() {
                 >
                   Testimonials
                 </Link>
-              </li>
-              <li className="py-2 my-2 border-t border-b border-gray-200 dark:border-gray-800">
+              </li> */}
+              {/* <li className="py-2 my-2 border-t border-b border-gray-200 dark:border-gray-800">
                 <span className="flex text-gray-600 dark:text-gray-400 py-2">Resources</span>
                 <ul className="pl-4">
                   <li>
@@ -123,8 +132,8 @@ export default function MobileMenu() {
                     </Link>
                   </li>
                 </ul>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link
                   href="/contact"
                   className="font-medium w-full inline-flex items-center justify-center border border-transparent px-4 py-2 my-2 rounded-sm text-white bg-teal-500 hover:bg-teal-400 transition duration-150 ease-in-out"
@@ -132,7 +141,7 @@ export default function MobileMenu() {
                 >
                   Request code
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </Transition>

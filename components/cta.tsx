@@ -44,7 +44,7 @@ export default function Cta() {
                   </AuroraText>
                 </h3>
                 <p className="text-purple-200 text-lg mb-6">
-                  The future of music creation is social, instant, and accessible to everyone. Join thousands of creators who've already discovered the magic of JamSphere.
+                  The future of music creation is social, instant, and accessible to everyone. Join thousands of creators who've already discovered the magic of SyncTown.
                 </p>
 
                 {/* CTA form */}
@@ -55,7 +55,7 @@ export default function Cta() {
                         Start Creating Now - It's Free
                       </a>
                       <a className="btn text-white bg-purple-700 hover:bg-purple-800 border border-purple-500 hover:border-purple-400 flex-shrink-0" href="#0">
-                        Watch JamSphere in Action
+                        Watch SyncTown in Action
                       </a>
                     </div>
                   </div>

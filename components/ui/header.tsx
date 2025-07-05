@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { Transition } from '@headlessui/react'
 import Link from 'next/link'
 import Logo from './logo'
-import Dropdown from '../utils/dropdown'
+// import Dropdown from '../utils/dropdown'
 import MobileMenu from './mobile-menu'
 import ThemeToggle from './theme-toggle'
 
@@ -49,15 +49,15 @@ export default function Header() {
           <nav className="hidden md:flex md:grow">
             {/* Desktop menu links */}
             <ul className="flex grow flex-wrap items-center font-medium">
-              <li className="px-5 py-2">
+              {/* <li className="px-5 py-2">
                 <Link href="/about" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition duration-150 ease-in-out">About</Link>
-              </li>
+              </li> */}
               <li className="px-5 py-2">
                 <Link href="/features" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition duration-150 ease-in-out">Features</Link>
               </li>
               {/* 1st level: hover */}
-              <Dropdown title="Resources">
-                {/* 2nd level: hover */}
+              {/* <Dropdown title="Resources">
+                
                 <li>
                   <Link href="/help" className="flex font-medium text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 py-2 px-4 leading-tight transition duration-150 ease-in-out">
                     Help Center
@@ -78,10 +78,10 @@ export default function Header() {
                     Community
                   </Link>
                 </li>
-              </Dropdown>
-              <li className="px-5 py-2">
+              </Dropdown> */}
+              {/* <li className="px-5 py-2">
                 <Link href="/testimonials" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition duration-150 ease-in-out">Testimonials</Link>
-              </li>
+              </li> */}
             </ul>
 
             {/* Desktop CTA on the right */}

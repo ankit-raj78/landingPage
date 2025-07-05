@@ -18,7 +18,7 @@ export default function TestimonialsBlocks() {
                   </svg>
                 </div>
                 <blockquote className="text-xl font-medium mb-4">
-                  I've tried everything from Soundtrap to BandLab, but JamSphere is the first platform that actually feels like jamming with friends, not fighting with software.
+                  I've tried everything from Soundtrap to BandLab, but SyncTown is the first platform that actually feels like jamming with friends, not fighting with software.
                 </blockquote>
                 <cite className="block font-bold text-lg not-italic mb-1">Alex Chen</cite>
                 <div className="text-gray-600 dark:text-gray-400">
@@ -60,7 +60,7 @@ export default function TestimonialsBlocks() {
                 <path d="M37.89 58.338c-2.648-5.63-3.572-10.045-2.774-13.249.8-3.204 8.711-13.383 23.737-30.538l2.135.532c-6.552 10.033-10.532 17.87-11.939 23.515-.583 2.34.22 6.158 2.41 11.457l-13.57 8.283zm-26.963-6.56c-2.648-5.63-3.572-10.046-2.773-13.25.799-3.204 8.71-13.382 23.736-30.538l2.136.533c-6.552 10.032-10.532 17.87-11.94 23.515-.583 2.339.22 6.158 2.41 11.456l-13.57 8.283z" />
               </svg>
               <blockquote className="text-xl text-gray-600 dark:text-gray-400 italic mb-3">
-                "I've tried everything from Soundtrap to BandLab, but JamSphere is the first platform that actually feels like jamming with friends, not fighting with software."
+                "I've tried everything from Soundtrap to BandLab, but SyncTown is the first platform that actually feels like jamming with friends, not fighting with software."
               </blockquote>
               <div className="font-red-hat-display font-bold">
                 <cite className="text-gray-900 dark:text-gray-200 not-italic">Alex Chen</cite>
@@ -78,9 +78,9 @@ export default function TestimonialsBlocks() {
                 "As a music teacher, I love how students can jump in and start creating immediately. No technical barriers, just pure creativity."
               </blockquote>
               <div className="font-red-hat-display font-bold">
-                <cite className="text-gray-900 dark:text-gray-200 not-italic">Prof. David Kim</cite>
+                <cite className="text-gray-900 dark:text-gray-200 not-italic">Prof. Anshu Kumari</cite>
                 <span className="text-pink-500"> / </span>
-                <span className="text-gray-600 dark:text-gray-400">Berklee College of Music</span>
+                <span className="text-gray-600 dark:text-gray-400">Shantiniketan Kala Bhavan University</span>
               </div>
             </div>
 

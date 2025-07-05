@@ -1,6 +1,67 @@
+'use client'
+
+import { useState } from 'react'
 import { AuroraText } from '@/components/ui/aurora-text'
 
 export default function HeroWaitlist() {
+  const [email, setEmail] = useState('')
+  const [role, setRole] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [message, setMessage] = useState('')
+  const [isSuccess, setIsSuccess] = useState(false)
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(email)
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setMessage('')
+
+    // 前端邮箱验证
+    if (!validateEmail(email)) {
+      setMessage('请输入有效的邮箱地址')
+      setIsSuccess(false)
+      setIsSubmitting(false)
+      return
+    }
+
+    if (!role) {
+      setMessage('请选择您的角色')
+      setIsSuccess(false)
+      setIsSubmitting(false)
+      return
+    }
+
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, role }),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setMessage(data.message)
+        setIsSuccess(true)
+        setEmail('')
+        setRole('')
+      } else {
+        setMessage(data.error || '提交失败，请稍后重试')
+        setIsSuccess(false)
+      }
+    } catch (error) {
+      setMessage('网络错误，请稍后重试')
+      setIsSuccess(false)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
   return (
     <section className="relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -15,37 +76,60 @@ export default function HeroWaitlist() {
             
             {/* Waitlist form */}
             <div className="max-w-md mx-auto mt-8" data-aos="fade-down" data-aos-delay="300">
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <input 
                     type="email" 
-                    className="form-input w-full" 
+                    className={`form-input w-full ${message && !isSuccess ? 'border-red-500' : ''}`}
                     placeholder="Enter your email address" 
                     aria-label="Email address" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required 
                   />
                 </div>
                 <div>
-                  <select className="form-select w-full" aria-label="What describes you best?">
-                    <option>What describes you best?</option>
-                    <option>Music Producer</option>
-                    <option>Singer/Songwriter</option>
-                    <option>Beat Maker</option>
-                    <option>Indie Artist</option>
-                    <option>Music Student</option>
-                    <option>Content Creator</option>
-                    <option>Hobbyist</option>
-                    <option>Other</option>
+                  <select 
+                    className={`form-select w-full ${message && !isSuccess && !role ? 'border-red-500' : ''}`}
+                    aria-label="What describes you best?"
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}
+                    required
+                  >
+                    <option value="">What describes you best?</option>
+                    <option value="Music Producer">Music Producer</option>
+                    <option value="Singer/Songwriter">Singer/Songwriter</option>
+                    <option value="Beat Maker">Beat Maker</option>
+                    <option value="Indie Artist">Indie Artist</option>
+                    <option value="Music Student">Music Student</option>
+                    <option value="Content Creator">Content Creator</option>
+                    <option value="Hobbyist">Hobbyist</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
+                
+                {/* 消息显示 */}
+                {message && (
+                  <div className={`text-sm p-3 rounded-md ${
+                    isSuccess 
+                      ? 'bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-300 border border-green-300 dark:border-green-700' 
+                      : 'bg-red-100 dark:bg-red-900/20 text-red-800 dark:text-red-300 border border-red-300 dark:border-red-700'
+                  }`}>
+                    {message}
+                  </div>
+                )}
+                
                 <button 
                   type="submit" 
-                  className="btn text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 w-full"
+                  disabled={isSubmitting}
+                  className={`btn text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 w-full ${
+                    isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                  }`}
                 >
-                  Join the Waitlist
+                  {isSubmitting ? 'Joining...' : 'Join the Waitlist'}
                 </button>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  🎵 No spam, just updates about JamSphere's launch
+                  🎵 No spam, just updates about SyncTown's launch
                 </p>
               </form>
             </div>
