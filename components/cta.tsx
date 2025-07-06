@@ -51,12 +51,12 @@ export default function Cta() {
                 <form className="w-full lg:w-auto">
                   <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:mx-0">
                     <div className="flex flex-col sm:flex-row gap-3">
-                      <a className="btn text-purple-600 bg-gradient-to-r from-white to-purple-100 hover:from-white hover:to-purple-50 flex-shrink-0" href="#0">
+                      <a className="btn text-purple-600 bg-gradient-to-r from-white to-purple-100 hover:from-white hover:to-purple-50 flex-shrink-0" href="/waitlist">
                         Start Creating Now - It's Free
                       </a>
-                      <a className="btn text-white bg-purple-700 hover:bg-purple-800 border border-purple-500 hover:border-purple-400 flex-shrink-0" href="#0">
+                      {/* <a className="btn text-white bg-purple-700 hover:bg-purple-800 border border-purple-500 hover:border-purple-400 flex-shrink-0" href="#0">
                         Watch SyncTown in Action
-                      </a>
+                      </a> */}
                     </div>
                   </div>
                   <p className="text-purple-200 text-sm text-center lg:text-left mt-3">

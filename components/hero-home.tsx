@@ -1,8 +1,61 @@
+'use client'
+
+import { useState } from 'react'
 import VideoThumb from '@/public/images/mockup-image-01.jpg'
 import ModalVideoIphone from '@/components/modal-video-iphone'
 import { AuroraText } from '@/components/ui/aurora-text'
 
 export default function HeroHome() {
+  const [email, setEmail] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [message, setMessage] = useState('')
+  const [isSuccess, setIsSuccess] = useState(false)
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(email)
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setMessage('')
+
+    // 前端邮箱验证
+    if (!validateEmail(email)) {
+      setMessage('Please enter a valid email address')
+      setIsSuccess(false)
+      setIsSubmitting(false)
+      return
+    }
+
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, role: 'Music Enthusiast' }), // 默认角色
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setMessage(data.message || 'Thank you for joining our waitlist!')
+        setIsSuccess(true)
+        setEmail('')
+      } else {
+        setMessage(data.error || 'Submission failed, please try again')
+        setIsSuccess(false)
+      }
+    } catch (error) {
+      setMessage('Network error, please try again')
+      setIsSuccess(false)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -22,13 +75,35 @@ export default function HeroHome() {
                 Turn any browser into a social music studio. No downloads, no learning curve—just open a link, drag in audio, and start jamming with creators worldwide.
               </p>
               {/* CTA form */}
-              <form className="mt-8" data-aos="fade-down" data-aos-delay="300">
+              <form onSubmit={handleSubmit} className="mt-8" data-aos="fade-down" data-aos-delay="300">
                 <div className="flex flex-col sm:flex-row justify-center max-w-sm mx-auto sm:max-w-md md:mx-0">
-                  <input type="email" className="form-input w-full mb-2 sm:mb-0 sm:mr-2" placeholder="Enter your email" aria-label="Email address" />
-                  <a className="btn text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shrink-0" href="#0">Start Jamming</a>
+                  <input 
+                    type="email" 
+                    className={`form-input w-full mb-2 sm:mb-0 sm:mr-2 ${message && !isSuccess ? 'border-red-500' : ''}`}
+                    placeholder="Enter your email" 
+                    aria-label="Email address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                  <button 
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`btn text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shrink-0 ${
+                      isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                    }`}
+                  >
+                    {isSubmitting ? 'Joining...' : 'Join Waitlist'}
+                  </button>
                 </div>
-                {/* Success message */}
-                {/* <p className="text-center md:text-left mt-2 opacity-75 text-sm">Thanks for joining our waitlist!</p> */}
+                {/* Message display */}
+                {message && (
+                  <p className={`text-center md:text-left mt-2 text-sm ${
+                    isSuccess ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'
+                  }`}>
+                    {message}
+                  </p>
+                )}
               </form>
               <ul className="max-w-sm sm:max-w-md mx-auto md:max-w-none text-gray-600 dark:text-gray-400 mt-8 -mb-2" data-aos="fade-down" data-aos-delay="450">
                 <li className="flex items-center mb-2">
@@ -53,18 +128,17 @@ export default function HeroHome() {
             </div>
 
             {/* Mobile mockup */}
-            <div className="md:col-span-5 lg:col-span-5 text-center md:text-right" data-aos="fade-up" data-aos-delay="450">
-
+            {/* <div className="md:col-span-5 lg:col-span-5 text-center md:text-right" data-aos="fade-up">
               <ModalVideoIphone
                 thumb={VideoThumb}
                 thumbWidth={290}
                 thumbHeight={624}
-                thumbAlt="SyncTown music production platform demo"
+                thumbAlt="Modal video thumbnail"
                 video="/videos/video.mp4"
                 videoWidth={1920}
-                videoHeight={1080} />
-
-            </div>
+                videoHeight={1080}
+              />
+            </div> */}
 
           </div>
 

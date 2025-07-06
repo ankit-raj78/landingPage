@@ -35,7 +35,7 @@ export default function PricingTables() {
                 <div className="text-gray-500 dark:text-gray-400">— Free access during beta testing phase</div>
               </div>
               <div className="mt-24">
-                <a className="btn-sm text-white bg-teal-500 hover:bg-teal-400 w-full" href="#0">Join Waitlist</a>
+                <a className="btn-sm text-white bg-teal-500 hover:bg-teal-400 w-full" href="/waitlist">Join Waitlist</a>
               </div>
             </div>
 

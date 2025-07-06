@@ -83,7 +83,7 @@ export default function MobileMenu() {
                   About
                 </Link>
               </li> */}
-              <li>
+              {/* <li>
                 <Link
                   href="/features"
                   className="flex text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 py-2"
@@ -91,7 +91,7 @@ export default function MobileMenu() {
                 >
                   Features
                 </Link>
-              </li>
+              </li> */}
               {/* <li>
                 <Link
                   href="/blog"

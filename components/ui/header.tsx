@@ -52,9 +52,9 @@ export default function Header() {
               {/* <li className="px-5 py-2">
                 <Link href="/about" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition duration-150 ease-in-out">About</Link>
               </li> */}
-              <li className="px-5 py-2">
+              {/* <li className="px-5 py-2">
                 <Link href="/features" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition duration-150 ease-in-out">Features</Link>
-              </li>
+              </li> */}
               {/* 1st level: hover */}
               {/* <Dropdown title="Resources">
                 
