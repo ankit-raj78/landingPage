@@ -52,7 +52,12 @@ export default function HeroWaitlist() {
         setEmail('')
         setRole('')
       } else {
-        setMessage(data.error || '提交失败，请稍后重试')
+        // Handle duplicate email case specifically
+        if (response.status === 409 || data.error === "You're in our waitlist already!") {
+          setMessage("You're in our waitlist already!")
+        } else {
+          setMessage(data.error || '提交失败，请稍后重试')
+        }
         setIsSuccess(false)
       }
     } catch (error) {

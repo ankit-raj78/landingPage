@@ -7,6 +7,7 @@ import { AuroraText } from '@/components/ui/aurora-text'
 
 export default function HeroHome() {
   const [email, setEmail] = useState('')
+  const [role, setRole] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [message, setMessage] = useState('')
   const [isSuccess, setIsSuccess] = useState(false)
@@ -29,13 +30,21 @@ export default function HeroHome() {
       return
     }
 
+    // 验证角色选择
+    if (!role) {
+      setMessage('Please select your role')
+      setIsSuccess(false)
+      setIsSubmitting(false)
+      return
+    }
+
     try {
       const response = await fetch('/api/waitlist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, role: 'Music Enthusiast' }), // 默认角色
+        body: JSON.stringify({ email, role }),
       })
 
       const data = await response.json()
@@ -44,8 +53,14 @@ export default function HeroHome() {
         setMessage(data.message || 'Thank you for joining our waitlist!')
         setIsSuccess(true)
         setEmail('')
+        setRole('')
       } else {
-        setMessage(data.error || 'Submission failed, please try again')
+        // Handle duplicate email case specifically
+        if (response.status === 409 || data.error === "You're in our waitlist already!") {
+          setMessage("You're in our waitlist already!")
+        } else {
+          setMessage(data.error || 'Submission failed, please try again')
+        }
         setIsSuccess(false)
       }
     } catch (error) {
@@ -68,28 +83,45 @@ export default function HeroHome() {
             <div className="md:col-span-7 lg:col-span-7 mb-8 md:mb-0 text-center md:text-left">
               <h1 className="h1 lg:text-6xl mb-4 font-red-hat-display font-black" data-aos="fade-down">
                 <AuroraText colors={["#FF0080", "#00D4FF", "#FFFF00", "#FF8C00"]} speed={1.2}>
-                  Meet → Mix → Make Magic
+                  Meet → Mix → Make Music
                 </AuroraText> in 60 Seconds
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400" data-aos="fade-down" data-aos-delay="150">
                 Turn any browser into a social music studio. No downloads, no learning curve—just open a link, drag in audio, and start jamming with creators worldwide.
               </p>
-              {/* CTA form */}
+              {/* CTA form - Updated to vertical layout */}
               <form onSubmit={handleSubmit} className="mt-8" data-aos="fade-down" data-aos-delay="300">
-                <div className="flex flex-col sm:flex-row justify-center max-w-sm mx-auto sm:max-w-md md:mx-0">
+                <div className="flex flex-col max-w-sm mx-auto md:mx-0 space-y-3">
                   <input 
                     type="email" 
-                    className={`form-input w-full mb-2 sm:mb-0 sm:mr-2 ${message && !isSuccess ? 'border-red-500' : ''}`}
+                    className={`form-input w-full ${message && !isSuccess && !email ? 'border-red-500' : ''}`}
                     placeholder="Enter your email" 
                     aria-label="Email address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
                   />
+                  <select 
+                    className={`form-select w-full ${message && !isSuccess && !role ? 'border-red-500' : ''}`}
+                    aria-label="What describes you best?"
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}
+                    required
+                  >
+                    <option value="">What describes you best?</option>
+                    <option value="Music Producer">Music Producer</option>
+                    <option value="Singer/Songwriter">Singer/Songwriter</option>
+                    <option value="Beat Maker">Beat Maker</option>
+                    <option value="Indie Artist">Indie Artist</option>
+                    <option value="Music Student">Music Student</option>
+                    <option value="Content Creator">Content Creator</option>
+                    <option value="Hobbyist">Hobbyist</option>
+                    <option value="Other">Other</option>
+                  </select>
                   <button 
                     type="submit"
                     disabled={isSubmitting}
-                    className={`btn text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shrink-0 ${
+                    className={`btn text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 w-full ${
                       isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
                     }`}
                   >
@@ -98,7 +130,7 @@ export default function HeroHome() {
                 </div>
                 {/* Message display */}
                 {message && (
-                  <p className={`text-center md:text-left mt-2 text-sm ${
+                  <p className={`text-center md:text-left mt-3 text-sm ${
                     isSuccess ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'
                   }`}>
                     {message}

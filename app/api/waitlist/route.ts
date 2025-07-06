@@ -7,6 +7,7 @@ console.log('TEST_VAR =>', process.env.TEST_VAR)
 
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import { checkEmailExists, addToWaitlist } from '@/lib/aws/dynamodb'
 
 export async function POST(request: NextRequest) {
   try {
@@ -19,6 +20,44 @@ export async function POST(request: NextRequest) {
         { error: 'Please enter a valid email address' },
         { status: 400 }
       )
+    }
+
+    // 验证角色是否有效
+    const validRoles = ['Music Producer', 'Singer/Songwriter', 'Beat Maker', 'Indie Artist', 'Music Student', 'Content Creator', 'Hobbyist', 'Other'];
+    if (!role || !validRoles.includes(role)) {
+      return NextResponse.json(
+        { error: 'Please select a valid role' },
+        { status: 400 }
+      )
+    }
+
+    // 检查邮箱是否已存在于数据库中
+    try {
+      const emailExists = await checkEmailExists(email);
+      if (emailExists) {
+        return NextResponse.json(
+          { error: "You're in our waitlist already!" },
+          { status: 409 } // Conflict status code
+        )
+      }
+    } catch (dbError) {
+      console.error('Database check error:', dbError);
+      // 如果数据库检查失败，继续处理但记录错误
+    }
+
+    // 添加到数据库
+    try {
+      await addToWaitlist(email, role);
+      console.log('✅ Successfully added to DynamoDB:', email);
+    } catch (dbError: any) {
+      console.error('Database save error:', dbError);
+      if (dbError.message === 'Email already exists in waitlist') {
+        return NextResponse.json(
+          { error: "You're in our waitlist already!" },
+          { status: 409 }
+        )
+      }
+      // 如果数据库保存失败，继续发送邮件但记录错误
     }
 
     // 检查环境变量
