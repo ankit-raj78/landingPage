@@ -69,7 +69,7 @@ export default function HeroHome() {
               <h1 className="h1 lg:text-6xl mb-4 font-red-hat-display font-black" data-aos="fade-down">
                 <AuroraText colors={["#FF0080", "#00D4FF", "#FFFF00", "#FF8C00"]} speed={1.2}>
                   Meet → Mix → Make Magic
-                </AuroraText> in Under 60 Seconds
+                </AuroraText> in 60 Seconds
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400" data-aos="fade-down" data-aos-delay="150">
                 Turn any browser into a social music studio. No downloads, no learning curve—just open a link, drag in audio, and start jamming with creators worldwide.
