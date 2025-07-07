@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
     if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
       console.error('❌ Environment variables missing')
       return NextResponse.json({
-        message: 'Thank you for joining the waitlist! We have recorded your information.',
+        message: 'Thank you for joining the waitlist!',
         success: true
       })
     }
@@ -159,7 +159,7 @@ export async function POST(request: NextRequest) {
     console.log('New user joined the waitlist:', { email, role, timestamp: new Date().toISOString() })
     
     return NextResponse.json({
-      message: 'Thank you for joining the waitlist! We have sent you a confirmation email.',
+      message: 'Thank you for joining the waitlist!',
       success: true
     })
     

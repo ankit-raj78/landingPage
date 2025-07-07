@@ -28,7 +28,7 @@
 /* Buttons */
 .btn,
 .btn-sm {
-    @apply font-medium inline-flex items-center justify-center border border-transparent rounded-xs leading-snug transition duration-150 ease-in-out cursor-pointer;
+    @apply font-medium inline-flex items-center justify-center border border-transparent rounded leading-snug transition duration-150 ease-in-out cursor-pointer;
 }
 
 .btn {
@@ -53,7 +53,7 @@
 .form-textarea,
 .form-multiselect,
 .form-select {
-    @apply bg-white dark:bg-gray-800 leading-snug rounded-xs py-3 px-4 focus:border-gray-400 dark:focus:border-gray-500;
+    @apply bg-white dark:bg-gray-800 leading-snug rounded py-3 px-4 focus:border-gray-400 dark:focus:border-gray-500;
 }
 
 .form-input,
@@ -71,7 +71,7 @@
 }
 
 .form-checkbox {
-    @apply rounded-xs;
+    @apply rounded;
 }
 
 /* Chrome, Safari and Opera */
