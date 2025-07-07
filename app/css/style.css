@@ -2,8 +2,11 @@
 
 /* Additional styles */
 @import './additional-styles/utility-patterns.css' layer(components);
+@import './additional-styles/utility-patterns.css'; /* Safari <16.4 fallback */
 @import './additional-styles/range-slider.css' layer(components);
+@import './additional-styles/range-slider.css'; /* Safari <16.4 fallback */
 @import './additional-styles/toggle-switch.css' layer(components);
+@import './additional-styles/toggle-switch.css'; /* Safari <16.4 fallback */
 @import './additional-styles/theme.css';
 
 @plugin "@tailwindcss/forms" {
