@@ -1,15 +1,14 @@
 server.js
-package.json
 package-lock.json
 node_modules/
 dynamodb.js
 create-dynamodb-table.js
 test-env.js
 waitlist.json
-api/
 *.md
 !index.html
 !css/
 !js/
 !images/
-!fonts/ 
+!fonts/
+!api/ 

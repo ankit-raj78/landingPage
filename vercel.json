@@ -1,10 +1,6 @@
 {
   "version": 2,
-  "functions": {
-    "api/waitlist.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
+
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
