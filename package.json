@@ -1,23 +1,10 @@
 {
-  "name": "synctown-waitlist",
+  "name": "synctown-portfolio-static",
   "version": "1.0.0",
   "private": true,
+  "description": "Static portfolio site for SyncTown",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "preview": "npx serve -s ."
   },
-  "dependencies": {
-    "next": "14.0.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "nodemailer": "^6.9.7",
-    "@aws-sdk/client-dynamodb": "^3.456.0",
-    "@aws-sdk/lib-dynamodb": "^3.456.0"
-  },
-  "devDependencies": {
-    "eslint": "8.53.0",
-    "eslint-config-next": "14.0.0"
-  }
+  "license": "MIT"
 } 
