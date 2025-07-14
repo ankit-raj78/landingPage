@@ -9,11 +9,13 @@
     "serve": "python3 -m http.server 8000"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.456.0",
+    "@aws-sdk/lib-dynamodb": "^3.456.0"
+  },
+  "devDependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5",
     "nodemailer": "^6.9.7",
-    "dotenv": "^16.3.1",
-    "@aws-sdk/client-dynamodb": "^3.456.0",
-    "@aws-sdk/lib-dynamodb": "^3.456.0"
+    "dotenv": "^16.3.1"
   }
 } 

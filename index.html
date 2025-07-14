@@ -646,35 +646,28 @@
         joinBtn.textContent = 'Joining...';
         
                  try {
-          // Send email directly using EmailJS for static deployment
-          const templateParams = {
-            to_email: 'hello@synctown.ai',
-            from_email: email,
-            user_email: email,
-            user_role: role,
-            timestamp: new Date().toISOString()
-          };
-          
-          // Note: You'll need to set up EmailJS service and replace these IDs
-          // await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams);
-          
-          // For now, store in localStorage as backup and show success message
-          const waitlistData = JSON.parse(localStorage.getItem('synctown_waitlist') || '[]');
-          waitlistData.push({
-            email: email,
-            role: role,
-            timestamp: new Date().toISOString()
+          // Send to Vercel serverless function
+          const response = await fetch('/api/waitlist', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, role })
           });
-          localStorage.setItem('synctown_waitlist', JSON.stringify(waitlistData));
           
-          showMessage('Thank you for joining the waitlist! We will contact you soon.', false);
-          emailInput.value = '';
-          roleSelect.value = '';
+          const data = await response.json();
+          
+          if (response.ok) {
+            showMessage(data.message || 'Thank you for joining the waitlist!', false);
+            emailInput.value = '';
+            roleSelect.value = '';
+          } else {
+            showMessage(data.error || 'Something went wrong. Please try again.');
+          }
           
         } catch (error) {
           console.error('Error:', error);
           showMessage('Unable to submit. Please try again or contact hello@synctown.ai directly.');
-        }
         } finally {
           // Re-enable button
           joinBtn.disabled = false;
