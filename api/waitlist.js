@@ -77,12 +77,37 @@ export default async function handler(req, res) {
 
   // send mail (best-effort)
   if (transporter) {
+    const emailContent = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px; text-align: center; border-radius: 10px 10px 0 0;">
+          <h1 style="color: white; margin: 0; font-size: 28px;">Welcome to SyncTown!</h1>
+        </div>
+        <div style="padding: 40px; background: #f8f9fa; border-radius: 0 0 10px 10px;">
+          <h2 style="color: #333; margin-bottom: 20px;">Thank you for joining the waitlist!</h2>
+          <p style="color: #666; font-size: 16px; line-height: 1.6;">Dear ${clean},</p>
+          <p style="color: #666; font-size: 16px; line-height: 1.6;">We are excited to have you on the waitlist! As a <strong>${role}</strong>, you will receive priority access when we launch.</p>
+          <div style="background: #e3f2fd; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="color: #1976d2; margin-top: 0;">You will receive the following benefits:</h3>
+            <ul style="color: #666; padding-left: 20px;">
+              <li>🚀 Priority access</li>
+              <li>🎁 Exclusive release discounts</li>
+              <li>💎 Early access to advanced features</li>
+              <li>🎵 Participate in product development</li>
+            </ul>
+          </div>
+          <p style="color: #666; font-size: 16px; line-height: 1.6;">We will notify you as soon as the product is ready.</p>
+          <p style="color: #666; font-size: 16px; line-height: 1.6;">Looking forward to creating music with you!</p>
+          <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid #ddd;">
+            <p style="color: #999; font-size: 14px;">SyncTown Team<br/>hello@synctown.ai</p>
+          </div>
+        </div>
+      </div>`;
     try {
       await transporter.sendMail({
         from: '"SyncTown" <hello@synctown.ai>',
         to: clean,
         subject: '🎵 Welcome to SyncTown Waitlist!',
-        text: `Thanks for joining the waitlist as a ${role}!`,
+        html: emailContent,
       });
     } catch (e) {
       console.error('mail error', e);
