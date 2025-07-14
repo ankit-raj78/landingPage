@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 
 // Email transporter setup
 function createTransporter() {
-  return nodemailer.createTransporter({
+  return nodemailer.createTransport({
     host: process.env.SMTP_HOST || 'smtppro.zoho.com',
     port: parseInt(process.env.SMTP_PORT || '587'),
     secure: false,
@@ -123,15 +123,20 @@ module.exports = async function handler(req, res) {
     // Send welcome email
     try {
       if (process.env.SMTP_USER && process.env.SMTP_PASS) {
-        console.log('📧 Starting email send...');
-        console.log('📧 Recipient:', sanitizedEmail);
+        console.log('📧 开始发送邮件...');
+        console.log('📧 收件人:', sanitizedEmail);
+        console.log('📧 SMTP配置:', {
+          host: process.env.SMTP_HOST,
+          port: process.env.SMTP_PORT,
+          user: process.env.SMTP_USER
+        });
         
         const transporter = createTransporter();
         
-        // Verify SMTP connection
-        console.log('📧 Verifying SMTP connection...');
+        // 验证SMTP连接
+        console.log('📧 验证SMTP连接...');
         await transporter.verify();
-        console.log('✅ SMTP connection verified');
+        console.log('✅ SMTP连接验证成功');
         
         const emailContent = `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -178,7 +183,7 @@ module.exports = async function handler(req, res) {
           </div>
         `;
 
-        console.log('📧 Sending email...');
+        console.log('📧 发送邮件中...');
         await transporter.sendMail({
           from: '"SyncTown Team" <hello@synctown.ai>',
           to: sanitizedEmail,
@@ -188,12 +193,12 @@ module.exports = async function handler(req, res) {
         
         console.log('✅ Welcome email sent to:', sanitizedEmail);
       } else {
-        console.log('⚠️ Email configuration incomplete, skipping email send');
+        console.log('⚠️ 邮件配置不完整，跳过发送邮件');
       }
     } catch (emailError) {
       console.error('❌ Email sending failed:', emailError.message);
-      console.error('❌ Detailed error:', emailError);
-      // Don't fail the entire request if email fails
+      console.error('❌ 详细错误:', emailError);
+      // 不要因为邮件发送失败而让整个请求失败
     }
 
     return res.status(200).json({ 
