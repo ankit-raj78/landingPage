@@ -228,3 +228,5 @@ process.on('SIGINT', () => {
   console.log('\n👋 Shutting down server...');
   process.exit(0);
 }); 
+
+module.exports = app;
