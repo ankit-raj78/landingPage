@@ -1,0 +1,122 @@
+.project {
+    background: #DDFFBC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project .projectCards {
+    display: flex;
+    gap: 1.8vw;
+}
+
+.project .projectCards>div {
+    cursor: pointer;
+    border-radius: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project .projectCards>div img {
+    width: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+    transform: scale(1);
+    flex-shrink: 0;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.project .projectCards>div img:hover {
+    transform: scale(1.1);
+}
+
+.projectItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 22vw;
+    min-width: 250px;
+    max-width: 400px;
+}
+
+.projectItem .img-wrapper {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50px;
+    overflow: hidden;
+    margin-bottom: 1vw;
+}
+
+.projectItem .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.projectItem .img-wrapper img:hover {
+    transform: scale(1.1);
+}
+
+.thumb {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.thumb img:hover {
+    transform: scale(1.1);
+}
+
+.caption {
+    margin-top: 1vw;
+    padding: 0 1vw;
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.4;
+}
+
+.caption .highlight {
+    color: #FF6B35;
+    background: linear-gradient(120deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 107, 53, 0.2) 100%);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .project .projectCards {
+        flex-direction: column;
+        align-items: center;
+        gap: 3vw;
+    }
+    
+    .projectItem {
+        width: 80vw;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projectItem {
+        width: 90vw;
+        max-width: 300px;
+    }
+    
+    .caption {
+        margin-top: 2vw;
+    }
+}

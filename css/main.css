@@ -1,0 +1,967 @@
+@import url(components/nav.css);
+@import url(components/hero.css);
+@import url(components/marquee.css);
+@import url(components/about.css);
+@import url(components/project.css);
+@import url(components/pricing.css);
+@import url(components/faq.css);
+@import url(components/getintouch.css);
+@import url(components/footer.css);
+
+:root {
+    --black: #161616;
+    --white: #FDFDFB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    font-family: NeuHaasM, sans-serif !important;
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: NeuHaasM, sans-serif !important;
+    src: url(../fonts/NeueHaasDisplayMediu.ttf);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+section {
+    width: 100%;
+    overflow-x: hidden;
+    color: var(--black);
+}
+
+.container {
+    padding-left: 13vw;
+    padding-right: 13vw;
+}
+
+.Vcontainer {
+    padding-top: 9vw;
+    padding-bottom: 10vw;
+}
+
+.wavy-border {
+    margin-top: -40px;
+    width: 100%;
+    position: absolute;
+}
+
+.wavy-border img {
+    width: 100%;
+    height: 100%;
+}
+
+/*========= Margins =========*/
+
+.mL60 {
+    margin-left: 3.12vw;
+}
+
+.mT120 {
+    margin-top: 6.2vw;
+}
+
+.mT100 {
+    margin-top: 5.2vw;
+}
+
+.mT70 {
+    margin-top: 3.6vw;
+}
+
+.mT50 {
+    margin-top: 2.6vw;
+}
+
+.mT30 {
+    margin-top: 1.56vw;
+}
+
+.mT20 {
+    margin-top: 1.04vw;
+}
+
+.mT10 {
+    margin-top: 0.52vw;
+}
+
+/*========= buttons =========*/
+
+.btn {
+    font-size: 22px;
+    font-weight: bold;
+    background: var(--white);
+    color: var(--black);
+    border: 2px solid var(--black);
+    border-radius: 50px;
+    padding: 15px 30px;
+    box-shadow: 5px 5px var(--black);
+    width: fit-content;
+    transition: box-shadow .3s ease;
+}
+
+.btn:hover {
+    box-shadow: none;
+}
+
+/*========= fonts =========*/
+
+.font96 {
+    font-size: 5vw;
+    line-height: 5.5vw;
+    letter-spacing: -3px;
+    font-weight: bold;
+}
+
+.font72 {
+    font-size: 3.75vw;
+    font-weight: bold;
+    letter-spacing: -2.5px;
+}
+
+.font64 {
+    font-size: 3.3vw;
+    font-weight: bold;
+    letter-spacing: 0px;
+}
+
+.font48 {
+    font-size: 2.5vw;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.font40 {
+    font-size: 2.08vw;
+    font-weight: bold;
+    letter-spacing: -1.5px;
+}
+
+/* new font size 32 */
+.font32 {
+    font-size: 1.5vw;
+    line-height: 2.3vw;
+    letter-spacing: -1px;
+}
+
+.font20 {
+    font-size: 1.04vw;
+    line-height: 1.6vw;
+    word-spacing: -.5px;
+    letter-spacing: -.5px;
+}
+
+/* emphasis highlight */
+.empha {
+    font-weight: bold;
+    color: #FF6B35;
+}
+
+/*========================== Responsive ===========================*/
+
+@media (max-width: 1440px) {
+
+    /*- fonts -*/
+    .font20 {
+        font-size: 1.2vw;
+        line-height: 1.8vw;
+        word-spacing: 0px;
+        letter-spacing: 0px;
+    }
+
+    /*- nav -*/
+    .navWrapper ul li a {
+        margin-left: 2.5vw;
+        font-size: 1.2vw;
+    }
+
+    /*- hero -*/
+    .hero .hero-header>div p {
+        width: 80%;
+    }
+
+    #shape1 {
+        width: 15vw;
+    }
+
+    #shape2 {
+        top: 25vw;
+        left: 6vw;
+        width: 20vw;
+    }
+
+    #shape3 {
+        top: 40vw;
+        width: 20vw;
+    }
+
+    #shape4 {
+        top: 48vw;
+        left: 1vw;
+        width: 12vw;
+    }
+
+    #shape5 {
+        width: 15vw;
+    }
+
+    #shape6 {
+        top: 18vw;
+        width: 20vw;
+    }
+
+    #shape7 {
+        top: 33vw;
+        right:10vw;
+        width: 20vw;
+    }
+    
+
+    /*- marquee -*/
+    .marquee-content li {
+        font-size: 1.4vw;
+    }
+
+    /*- pricing -*/
+    .pricing .pricingHeader {
+        width: 50%;
+    }
+
+    #shape8 {
+        top:-2vw;
+        left: 15vw;
+        width: 8vw;
+    }
+
+    #shape9 {
+        top: 12vw;
+        left: 10vw;
+        width: 20vw;
+    }
+
+    #shape10 {
+        top: 30vw;
+        left: 3vw;
+        width: 10vw;
+    }
+
+    #shape11 {
+        top: 2vw;
+        width: 12vw;
+    }
+
+    #shape12 {
+        top: 18vw;
+        width: 13vw;
+    }
+
+    #shape13 {
+        top: 25vw;
+        width: 10vw;
+    }
+
+    #shape24 {
+        top: 1vw;
+        width: 1vw;
+    }
+}
+
+@media (max-width: 868px) {
+    .container {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    .Vcontainer {
+        padding-top: 9vw;
+        padding-bottom: 15vw;
+    }
+
+    .btn {
+        font-size: 20px;
+        border-radius: 50px;
+        padding: 12px 30px;
+    }
+
+    /*- margnis -*/
+    .mT120 {
+        margin-top: 10vw;
+    }
+
+    .mT100 {
+        margin-top: 9.2vw;
+    }
+
+    .mT70 {
+        margin-top: 6vw;
+    }
+
+    .mT50 {
+        margin-top: 4.6vw;
+    }
+
+    .mT30 {
+        margin-top: 2.56vw;
+    }
+
+    .mT20 {
+        margin-top: 2vw;
+    }
+
+    .mT10 {
+        margin-top: 1vw;
+    }
+
+    /*- fonts -*/
+    .font96 {
+        font-size: 7vw;
+        line-height: 8vw;
+    }
+
+    .font72 {
+        font-size: 5.5vw;
+        letter-spacing: -2.5px;
+    }
+
+    .font64 {
+        font-size: 4.8vw;
+    }
+
+    .font48 {
+        font-size: 4.2vw;
+    }
+
+    .font40 {
+        font-size: 4vw;
+        letter-spacing: -1.5px;
+    }
+
+    .font32 {
+        font-size: 3vw;
+        line-height: 4vw;
+    }
+
+    .font20 {
+        font-size: 2.2vw;
+        line-height: 3vw;
+    }
+
+    /*- nav -*/
+    .navbar {
+        padding: 0;
+        top: 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .navWrapper ul {
+        display: none;
+    }
+
+    .navWrapper {
+        padding: 2.6vw 5vw;
+        border: none;
+        border-bottom: 2px solid var(--black);
+        border-radius: 0;
+    }
+
+    /*- hero -*/
+    .hero {
+        padding: 22vw 0 15vw 0;
+    }
+
+    .hero .hero-header>div {
+        width: 70%;
+    }
+
+    .hero .icon-section {
+        border-radius: 220px;
+        padding: 10vw 5vw;
+    }
+
+    .hero .icon-section>div {
+        gap: 2.6vw;
+        margin-top: 5.2vw;
+    }
+
+    .hero .icon-section .icon-item img {
+        width: 15vw;
+        height: 15vw;
+        margin-bottom: 2vw;
+    }
+
+    #shape1 {
+        width: 20vw;
+        top: 15vw;
+    }
+
+    #shape2 {
+        top: 30vw;
+        left: 3vw;
+        width: 20vw;
+    }
+
+    #shape3 {
+        top: 55vw;
+        width: 25vw;
+    }
+
+    #shape4 {
+        top: 60vw;
+        left: 10vw;
+        width: 10vw;
+    }
+
+    #shape5 {
+        top: 20vw;
+        width: 20vw;
+    }
+
+    #shape6 {
+        top: 20vw;
+        width: 20vw;
+        right: 5vw;
+    }
+
+    #shape7 {
+        top: 53vw;
+        right: 3vw;
+        width: 25vw;
+    }
+
+    /*- marquee -*/
+    .marquee-content li {
+        font-size: 2.2vw;
+    }
+
+    .marquee-content li span {
+        width: 1vw;
+        height: 1vw;
+    }
+
+    .marquee-content {
+        margin-top: -10px;
+    }
+
+    :root {
+        --marquee-height: 15vw;
+    }
+
+    /*- about -*/
+    .about {
+        flex-direction: column;
+        text-align: center;
+        gap: 5vw;
+    }
+
+    .about .aboutImg {
+        width: 70%;
+    }
+
+    .about .aboutText {
+        width: 100%;
+    }
+
+    /*- projects -*/
+    .project .projectCards {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4vw;
+    }
+
+    .project .projectCards>div {
+        width: 43vw;
+    }
+
+    /*- pricing -*/
+    .pricing .pricingHeader {
+        width: 55%;
+    }
+
+    .link {
+        font-size: 2.4vw;
+    }
+
+    .pricingCard {
+        margin-top: 10vw;
+        border-radius: 40px;
+    }
+
+    .pricingCard .pricingCard_inner {
+        border-radius: 35px;
+        padding: 5vw 2vw 2vw 2vw;
+    }
+
+    .pricingCard .pricingCard_inner .pricingCard_header {
+        width: 100%;
+    }
+
+    .pricingCard .pricingCard_inner .pricingCard_header h2 {
+        margin-top: 5vw;
+    }
+
+    .pricingCard .pricingCard_inner .pricingCard_table {
+        margin-top: 5.2vw;
+        border-radius: 30px;
+        padding: 5vw;
+    }
+
+    .pricingCard .pricingCard_inner .pricingCard_table>div {
+        margin-top: 5.2vw;
+        gap: 10vw;
+    }
+
+    .pricingCard .pricingCard_inner .pricingCard_table>div ul li {
+        margin-top: 5.2vw;
+    }
+
+    .rotate {
+        top: -10vw;
+        right: 0vw;
+    }
+
+    .rotate img {
+        width: 22vw;
+    }
+
+    .rotate p {
+        font-size: 1.8vw;
+    }
+
+    
+     #shape8 {
+        top: 0vw;
+        left: 20vw;
+        width: 8vw;
+    }
+
+    #shape9 {
+        top: 18vw;
+        left: 5vw;
+        width: 22vw;
+    }
+
+    #shape10 {
+        top: 30vw;
+        left: 3vw;
+        width: 10vw;
+    }
+
+    #shape11 {
+        top: 2vw;
+        right: 15vw;
+        width: 8vw;
+    }
+
+    #shape12 {
+        top: 23vw;
+        right: 10vw;
+
+        width: 18vw;
+    }
+
+    #shape13 {
+        top: 25vw;
+        width: 10vw;
+    }
+
+
+    /*- FAQ -*/
+    .faq .faq_inner {
+        padding: 5.2vw 3vw;
+        border-radius: 40px;
+    }
+
+    .faq .faq_inner>div .question {
+        margin-top: 2.6vw;
+        border-radius: 25px;
+        padding: 3vw 2vw;
+    }
+
+    #faqShape {
+        display: none;
+    }
+
+    /*- get in touch -*/
+    .getintouch>div {
+        width: 80%;
+    }
+
+    /*- footer -*/
+    .footer {
+        padding-top: 8vw;
+        padding-bottom: 8vw;
+    }
+}
+
+@media (max-width: 670px) {
+    .wavy-border {
+        margin-top: -20px;
+    }
+
+    .Vcontainer {
+        padding-top: 12vw;
+        padding-bottom: 18vw;
+    }
+
+    .btn {
+        font-size: 16px;
+        border: 1.5px solid var(--black);
+        padding: 10px 25px;
+    }
+
+    /*- margnis -*/
+    .mT120 {
+        margin-top: 18vw;
+    }
+
+    .mT100 {
+        margin-top: 15vw;
+    }
+
+    .mT70 {
+        margin-top: 12vw;
+    }
+
+    .mT50 {
+        margin-top: 10vw;
+    }
+
+    .mT30 {
+        margin-top: 7vw;
+    }
+
+    .mT20 {
+        margin-top: 5vw;
+    }
+
+    .mT10 {
+        margin-top: 3vw;
+    }
+
+    /*- fonts -*/
+    .font96 {
+        font-size: 9vw;
+        line-height: 11vw;
+        letter-spacing: -2px;
+    }
+
+    .font72 {
+        font-size: 7vw;
+        letter-spacing: -1px;
+    }
+
+    .font64 {
+        font-size: 6vw;
+        letter-spacing: 0px;
+    }
+
+    .font48 {
+        font-size: 5.2vw;
+    }
+
+    .font40 {
+        font-size: 5vw;
+        letter-spacing: -.5px;
+    }
+
+    .font20 {
+        font-size: 3.2vw;
+        line-height: 4vw;
+        word-spacing: -1px;
+    }
+
+    .font32 {
+        font-size: 4.2vw;
+        line-height: 5.2vw;
+    }
+
+    /*- nav -*/
+    .navWrapper .logo a {
+        font-size: 24px;
+        letter-spacing: -.5px;
+    }
+
+    .overlay {
+        height: 65%;
+    }
+
+    .overlay .overlay-content ul li a {
+        font-size: 5vw;
+    }
+
+    .RNB {
+        margin-bottom: 10vw;
+    }
+
+    /*- hero -*/
+    .hero {
+        padding: 50vw 0 18vw 0;
+    }
+
+    .hero .hero-header>div {
+        width: 90%;
+    }
+
+    .hero .hero-header>div p {
+        width: 100%;
+    }
+
+    .hero .icon-section {
+        margin-top: 40vw;
+        border-radius: 40px;
+        padding: 15vw 5vw;
+        border: 1.5px solid var(--black);
+    }
+
+    .hero .icon-section>div {
+        flex-direction: column;
+        gap: 15vw;
+        margin-top: 20vw;
+    }
+
+    .hero .icon-section .icon-item img {
+        width: 40vw;
+        height: 40vw;
+        margin-bottom: 1vw;
+    }
+
+    #shape1 {
+        width: 30vw;
+        top: 15vw;
+    }
+
+    #shape2 {
+        top: 17vw;
+        left: 33vw;
+        width: 32vw;
+    }
+
+    #shape3 {
+        top: 25vw;
+        left: 55vw;
+        width: 35vw;
+    }
+
+    #shape4 {
+        top: 110vw;
+        left: 1vw;
+        width: 16vw;
+    }
+
+    #shape5 {
+        top: 120vw;
+        width: 30vw;
+    }
+
+    #shape6 {
+        top: 100vw;
+        width: 25vw;
+        right: 6vw;
+    }
+
+    #shape7 {
+        top: 120vw;
+        width: 40vw;
+        right: 12vw;
+    }
+
+    #shape8 {
+        left: 1vw;
+        width: 20vw;
+    }
+
+    #shape9 {
+        top: 30vw;
+        width: 25vw;
+    }
+
+    #shape10 {
+        top: 40vw;
+        width: 15vw;
+    }
+
+    #shape11 {
+        width: 25vw;
+    }
+
+    #shape12 {
+        top: 22vw;
+        width: 15vw;
+        right: 0;
+    }
+
+    #shape13 {
+        top: 35vw;
+        width: 15vw;
+    }
+
+    /*- marquee -*/
+    .marquee {
+        border-bottom: 1.5px solid var(--black);
+    }
+
+    .marquee-content li {
+        font-size: 2.8vw;
+    }
+
+    .marquee-content li span {
+        width: 1.2vw;
+        height: 1.2vw;
+    }
+
+    .marquee-content {
+        margin-top: -8px;
+    }
+
+    :root {
+        --marquee-height: 20vw;
+    }
+
+    /*- about -*/
+    .about {
+        gap: 10vw;
+    }
+
+    .about .aboutImg {
+        width: 90%;
+    }
+
+    /*- projects -*/
+    .project .projectCards {
+        gap: 10vw;
+    }
+
+    .project .projectCards>div {
+        width: 100%;
+        border-radius: 37px;
+    }
+
+    /*- pricing -*/
+    .pricing .pricingHeader {
+        width: 75%;
+    }
+
+    .link {
+        font-size: 3vw;
+        letter-spacing: 0px;
+    }
+
+    .pricing .pricingHeader>div {
+        gap: 5.2vw;
+    }
+
+    .pricingCard {
+        margin-top: 15vw;
+        border-radius: 30px;
+    }
+
+    .pricingCard .pricingCard_inner {
+        border-radius: 25px;
+        padding: 10vw 3vw 3vw 3vw;
+    }
+
+    .pricingCard .pricingCard_inner .pricingCard_header h2 {
+        margin-top: 8vw;
+    }
+
+    .pricingCard .pricingCard_inner .pricingCard_table {
+        margin-top: 15vw;
+        border-radius: 20px;
+        padding: 8vw;
+    }
+
+    .pricingCard .pricingCard_inner .pricingCard_table>div {
+        gap: 0;
+        flex-direction: column;
+    }
+
+    .pricingCard .pricingCard_inner .pricingCard_table>div ul li {
+        margin-top: 7vw;
+    }
+
+    .rotate img {
+        width: 25vw;
+    }
+
+    .rotate p {
+        font-size: 2.2vw;
+    }
+
+    #shape8 {
+        top: 0vw;
+        left: 5vw;
+        width: 10vw;
+    }
+
+    #shape9 {
+        left: 5vw;
+        top: 35vw;
+        width: 18vw;
+    }
+
+    #shape10 {
+        top: 55vw;
+        width: 20vw;
+        left: 0;
+    }
+
+    #shape11 {
+        top: 10vw;
+        width: 10vw;
+        right: 5vw;
+    }
+
+    #shape12 {
+        top: 40vw;
+        width: 15vw;
+        right: 5vw;
+    }
+
+    #shape13 {
+        top: 55vw;
+        width: 18vw;
+        right: 0;
+    }
+
+    /*- FAQ -*/
+    .faq .faq_inner {
+        padding: 8vw 5vw;
+        border-radius: 25px;
+    }
+
+    .faq .faq_inner>div .question {
+        margin-top: 5.2vw;
+        border-radius: 15px;
+        padding: 5vw 3vw;
+    }
+
+    .getintouch>div {
+        width: 100%;
+    }
+
+    .footer {
+        padding-top: 10vw;
+        padding-bottom: 10vw;
+    }
+}

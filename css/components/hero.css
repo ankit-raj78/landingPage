@@ -1,0 +1,127 @@
+.hero {
+    position: relative;
+    background: #DDE9F2;
+    padding: 15vw 0 10vw 0;
+    overflow: hidden;
+}
+
+.hero .hero-header {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero .hero-header>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.hero .hero-header>div p {
+    width: 68%;
+}
+
+.hero .hero-header>div p.hero-description {
+    text-align: center;
+}
+
+.hero .hero-header>div p.hero-description .highlight {
+    font-weight: bold;
+    color: #FF6B35;
+    background: linear-gradient(120deg, #FFE066 0%, #FFE066 100%);
+    background-size: 100% 0.3em;
+    background-repeat: no-repeat;
+    background-position: 0 88%;
+    padding: 0 2px;
+}
+
+/* shapes */
+.shape {
+    position: absolute;
+}
+
+#shape1 {
+    top: 14vw;
+    left: 30vw;
+    width: 8vw;
+    height: 8vw;
+    border: none;
+    width: 5vw;
+}
+
+#shape2 {
+    top: 16vw;
+    left: 4vw;
+    width: 26vw;
+}
+
+#shape3 {
+    top: 38vw;
+    left: 16vw;
+    width: 16.8vw;
+}
+
+#shape4 {
+    top: 40vw;
+    left: 25vw;
+    width: 5vw;
+}
+
+#shape5 {
+    top: 11vw;
+    right: 1vw;
+    width: 11.4vw;
+}
+
+#shape6 {
+    top: 15vw;
+    right: 10vw;
+    width: 24vw;
+}
+
+#shape7 {
+    top: 34vw;
+    right: 20vw;
+    width: 17.6vw;
+}
+
+/*- how it works -*/
+
+.hero .icon-section {
+    background: var(--white);
+    border: 2px solid var(--black);
+    border-radius: 270px;
+    padding: 5.2vw 0;
+}
+
+.hero .icon-section h2 {
+    text-align: center;
+}
+
+.hero .icon-section>div {
+    display: flex;
+    justify-content: center;
+    gap: 5.2vw;
+    margin-top: 4.6vw;
+}
+
+.hero .icon-section .icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero .icon-section .icon-item img {
+    width: 10vw;
+    height: 10vw;
+    margin-bottom: 1vw;
+}
+
+.hero .icon-section .icon-item p {
+    text-align: center;
+    line-height: 110%;
+}
