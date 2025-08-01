@@ -39,6 +39,25 @@
     padding: 0 2px;
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 2vw;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 868px) {
+    .hero-buttons {
+        flex-direction: column;
+        gap: 3vw;
+    }
+    
+    .hero-buttons .mL60 {
+        margin-left: 0;
+    }
+}
+
 /* shapes */
 .shape {
     position: absolute;
