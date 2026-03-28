@@ -7,6 +7,14 @@
     <title>SyncTown</title>
     <!-- Custom -->
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/components/trial.css" />
+    <!-- Cloudflare Turnstile -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <!-- FingerprintJS -->
+    <script>
+      !function(e,t){var n=e.FingerprintJS=e.FingerprintJS||{};n.q=n.q||[];n.q.push(t)}(window,function(){FingerprintJS.load().then(function(fp){return fp.get()}).then(function(r){window._fpVisitorId=r.visitorId})});
+    </script>
+    <script async src="https://openfpcdn.io/fingerprintjs/v4"></script>
   </head>
   <body>
     <div id="main">
@@ -515,6 +523,81 @@
       </div>
       <!-- X - X - X -->
 
+      <!-- Try AI Detection -->
+      <section class="trial-detect container Vcontainer" id="trial-detect">
+        <div class="trial-header">
+          <h1 class="font64">See It For Yourself</h1>
+          <p class="font20 mT30">Upload any image — our AI detects face swaps and AI-generated content in seconds. Free, no sign-up.</p>
+        </div>
+
+        <div class="trial-upload-area" id="trialUploadArea">
+          <input type="file" id="trialFileInput" accept="image/*" hidden />
+          <div class="trial-drop-zone" id="trialDropZone">
+            <div class="trial-drop-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+            </div>
+            <p class="trial-drop-label">Drag &amp; drop an image here</p>
+            <p class="trial-drop-sub">or</p>
+            <button type="button" class="btn trial-browse-btn" id="trialBrowseBtn">Browse Files</button>
+            <p class="trial-drop-formats">JPG, PNG, WEBP &middot; max 10 MB</p>
+          </div>
+          <div class="trial-preview" id="trialPreview" style="display:none">
+            <img id="trialPreviewImg" src="" alt="Preview" />
+            <button type="button" class="trial-remove-btn" id="trialRemoveBtn">&times;</button>
+          </div>
+        </div>
+
+        <!-- Turnstile invisible widget -->
+        <div id="trial-turnstile"
+             class="cf-turnstile"
+             data-sitekey="TURNSTILE_SITE_KEY_PLACEHOLDER"
+             data-callback="onTurnstileReady"
+             data-size="invisible">
+        </div>
+
+        <div class="trial-actions mT30">
+          <button type="button" class="btn" id="trialScanBtn" disabled>Scan Image</button>
+          <p class="trial-scans-info" id="trialScansInfo">3 free scans per day</p>
+        </div>
+
+        <!-- Results -->
+        <div class="trial-results" id="trialResults" style="display:none">
+          <div class="trial-result-card" id="trialFaceswapCard">
+            <div class="trial-result-label">Face Swap Detection</div>
+            <div class="trial-result-bar-wrap">
+              <div class="trial-result-bar" id="trialFaceswapBar"></div>
+            </div>
+            <div class="trial-result-meta">
+              <span class="trial-result-verdict" id="trialFaceswapVerdict"></span>
+              <span class="trial-result-confidence" id="trialFaceswapConfidence"></span>
+            </div>
+          </div>
+          <div class="trial-result-card" id="trialAiCard">
+            <div class="trial-result-label">AI-Generated Image</div>
+            <div class="trial-result-bar-wrap">
+              <div class="trial-result-bar" id="trialAiBar"></div>
+            </div>
+            <div class="trial-result-meta">
+              <span class="trial-result-verdict" id="trialAiVerdict"></span>
+              <span class="trial-result-confidence" id="trialAiConfidence"></span>
+            </div>
+          </div>
+          <p class="trial-scans-remaining" id="trialScansRemaining"></p>
+          <p class="trial-cta">Want unlimited scans? <a href="https://app.scam.ai" target="_blank" rel="noopener">Sign up &rarr;</a></p>
+        </div>
+
+        <div class="trial-error" id="trialError" style="display:none"></div>
+        <div class="trial-loading" id="trialLoading" style="display:none">
+          <div class="trial-spinner"></div>
+          <p>Analyzing image&hellip;</p>
+        </div>
+      </section>
+      <!-- X - X - X -->
+
       <!-- Get in Touch -->
       <section class="getintouch container Vcontainer" id="joinwaitlist">
         <div>
@@ -691,5 +774,6 @@
         }
       });
     </script>
+    <script src="js/trial.js"></script>
   </body>
 </html>
